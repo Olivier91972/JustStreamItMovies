@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustStreamIt - Pour moins de « binge watching », optimise ton temps avec #JustStreamIt</title>
+    <link rel="stylesheet" href="./data/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header id="header" class="header">
+        <img class="header__logo" src="data/img/just_stream_it_logo.png" alt="Logo de Just Stream It">
+        <nav class="nav">
+            <ul>
+                <li class="nav__link"><a href="#header">Accueil</a></li>
+                <li class="nav__link"><a href="#highestScores">Catégories</a></li>
+                <!-- <li class="nav__link"><a href="#family">Famille</a></li>
+                <li class="nav__link"><a href="#music">Musique</a></li>
+                <li class="nav__link"><a href="#adventure">Aventure</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <section id="bestMovie">
+        <img class="bestMovieImage" src="./data/img/download.gif" alt="">
+        <h3 class="bestMovieTitle">Meilleur film ...</h3>
+        <input class="bestMovieInfo" type="button" value="Détails">
+        <p class="bestMovieDesc"></p>
+    </section>
+    <section id="highestScores" class="category">
+        <h2 class="category__title">Films les mieux notés</h2>
+        <div class="category__carousel">
+            <img src="data/img/left-arrow.svg" alt="Fleche ver la gauche" class="carousel__left">
+            <div class="slide">
+                <img class="highestScoresMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="highestScoresMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="highestScoresMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="highestScoresMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="highestScoresMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="highestScoresMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="highestScoresMoviesImage category__item" src="./data/img/download.gif" alt="">
+            </div>
+            <img src="data/img/right-arrow.svg" alt="Fleche ver la droite" class="carousel__right">
+        </div>
+    </section>
+    <section id="family" class="category">
+        <h2 class="category__title">Catégorie: Famille</h2>
+        <div class="category__carousel">
+            <img src="data/img/left-arrow.svg" alt="Fleche ver la gauche" class="carousel__left">
+            <div class="slide">
+                <img class="familyMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="familyMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="familyMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="familyMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="familyMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="familyMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="familyMoviesImage category__item" src="./data/img/download.gif" alt="">
+            </div>
+            <img src="data/img/right-arrow.svg" alt="Fleche ver la droite" class="carousel__right">
+        </div>
+    </section>
+    <section id="music" class="category">
+        <h2 class="category__title">Catégorie: Musique</h2>
+        <div class="category__carousel">
+            <img src="data/img/left-arrow.svg" alt="Fleche ver la gauche" class="carousel__left">
+            <div class="slide">
+                <img class="musicMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="musicMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="musicMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="musicMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="musicMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="musicMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="musicMoviesImage category__item" src="./data/img/download.gif" alt="">
+            </div>
+            <img src="data/img/right-arrow.svg" alt="Fleche ver la droite" class="carousel__right">
+        </div>
+    </section>
+    <section id="adventure" class="category">
+        <h2 class="category__title">Catégorie: Aventure</h2>
+        <div class="category__carousel">
+            <img src="data/img/left-arrow.svg" alt="Fleche ver la gauche" class="carousel__left">
+            <div class="slide">
+                <img class="adventureMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="adventureMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="adventureMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="adventureMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="adventureMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="adventureMoviesImage category__item" src="./data/img/download.gif" alt="">
+                <img class="adventureMoviesImage category__item" src="./data/img/download.gif" alt="">
+            </div>
+            <img src="data/img/right-arrow.svg" alt="Fleche ver la droite" class="carousel__right">
+        </div>
+    </section>
+    <div id="modalWindow" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Détails du film</h2>
+            </div>
+            <div class="modal-body">
+                <img id="modal-image" src="./data/img/download.gif" alt="">
+                <p id="modal-title"></p>
+                <p id="modal-category"></p>
+                <p id="modal-date"></p>
+                <p id="modal-rate"></p>
+                <p id="modal-lmdb"></p>
+                <p id="modal-director"></p>
+                <p id="modal-actor"></p>
+                <p id="modal-duration"></p>
+                <p id="modal-country"></p>
+                <p id="modal-boxoffice"></p>
+                <p id="modal-summary"></p>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="row">
+                <div class="bloc footer-col">
+                    <h3>Nos Catégories</h3>
+                    <ul class="liste-services">
+                        <li><a href="#">Famille</a></li>
+                        <li><a href="#">Musique</a></li>
+                        <li><a href="#">Aventure</a></li>
+                    </ul>
+                </div>
+                <div class="bloc footer-col">
+                    <h3>Contact</h3>
+                    <ul class="liste-contacts">
+                        <li><a href="#">Nous contacter</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="bloc footer-col">
+                    <h3>Suivez-nous</h3>
+                    <div class="liste-social-links">
+                        <a href="#"><i class="fa-brands fa-facebook fa-beat"></i></a></li>
+                        <a href="#"><i class="fa-brands fa-square-twitter fa-beat"></i></a></li>
+                        <a href="#"><i class="fa-brands fa-square-instagram fa-beat"></i></a></li>
+                        <a href="#"><i class="fa-brands fa-linkedin fa-beat"></i></a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

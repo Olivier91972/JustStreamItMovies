@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-image: url(../img/fond-texture-cuir-froisse-bleu-fonce_53876-124595.avif);
+  /* background-color: #21353b; */
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient( to bottom, #f0f9ff 0%,#080f3a 100% );
+  
+  /* background-color: #236353; */
+  width: 100%;
+  z-index: 5;
+}
+.header__logo {
+  margin: 10px;
+  background-color: #dedede;
+  height: 5em;
+}
+.header .nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: linear-gradient( to bottom, #f0f9ff 0%,#080f3a 100% );
+}
+.header .nav li {
+  float: left;
+}
+.header .nav li a {
+  display: block;
+  color: #dedede;
+  padding: 1.5em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.5rem;
+}
+.header .nav li a:hover {
+  background-color: #8ca0b94b;
+  color: #43465e;
+}
+
+.category {
+  margin-top: 4em;
+}
+.category__title {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 3rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.bestMovieInfo {
+  background-color: initial;
+  background-image: linear-gradient(-180deg, #dedede, #43465e);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #0b0e1f;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: large;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100px;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow 0.2s;
+}
+.bestMovieInfo:hover {
+  box-shadow: #dedede 0 3px 8px;
+}
+
+#bestMovie {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #7a756ea6;
+  display: grid;
+  grid-template-columns: 100px 47% 6% 47% 100px;
+  grid-template-rows: auto 200px 80px;
+}
+#bestMovie .bestMovieTitle {
+  justify-self: end;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 5em;
+  grid-column: 2;
+  grid-row: 1;
+  color: #dedede;
+}
+#bestMovie .bestMovieImage {
+  justify-self: start;
+  height: 400px;
+  grid-column: 4;
+  grid-row: 1/4;
+}
+#bestMovie .bestMovieInfo {
+  justify-self: end;
+  grid-column: 2;
+  grid-row: 3;
+  z-index: 0;
+}
+#bestMovie .bestMovieDesc {
+  justify-self: end;
+  text-align: end;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.2em;
+  grid-column: 2;
+  grid-row: 2;
+  color: #dedede;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal-content {
+  position: relative;
+  background-color: #dedede;
+  padding: 0;
+  border: 1px solid #0b0e1f;
+  width: 80%;
+  max-width: 650px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  margin: 0 auto; /* 15% from the top and centered */
+}
+.modal-header {
+  padding: 5px 16px;
+  background-color: #8ca0b9ab;
+  color: #dedede;
+}
+.modal-body {
+  padding: 2px 16px;
+  display: grid;
+  grid-template-columns: auto 200px;
+  grid-template-rows: auto;
+}
+.modal-body > p {
+  margin: 5px;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.modal-body #modal-image {
+  margin-top: 30px;
+  grid-column: 2;
+  grid-row: span 10;
+  justify-self: center;
+}
+.modal-body #modal-title {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 2rem;
+}
+.modal-body #modal-summary {
+  grid-column: 1;
+}
+.modal-body #modal-actor {
+  grid-column: 1;
+  grid-row: 7;
+}
+.modal-body #modal-duration {
+  grid-column: 1;
+  grid-row: 8;
+}
+.modal-body #modal-country {
+  grid-column: 1;
+  grid-row: 9;
+}
+.modal-body #modal-boxoffice {
+  grid-column: 1;
+  grid-row: 10;
+}
+.modal-body #modal-summary {
+  grid-column: span 2;
+  grid-row: 11;
+}
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #8ca0b9ab;
+  color: #dedede;
+  height: 20px;
+}
+.modal .close {
+  color: #0b0e1f;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal .close:hover, .modal .close:focus {
+  color: #dedede;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes animatetop {
+  from {
+    top: -100%;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.category__carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.category__carousel .carousel__left {
+  height: 50px;
+  margin-left: 50px;
+  padding: 10px;
+  background-color: #7a756ea6;
+  border-radius: 10px;
+}
+.category__carousel .slide {
+  margin: 10px 50px;
+  display: flex;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+.category__carousel .slide .category__item {
+  border: 5px solid #43465e;
+  height: 400px;
+  min-height: 400px;
+  margin: 10px;
+  z-index: 1;
+}
+.category__carousel .carousel__right {
+  height: 50px;
+  margin-right: 50px;
+  padding: 10px;
+  background-color: #7a756ea6;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+.footer{
+  background-image: linear-gradient( to bottom, #f0f9ff 0%,#080f3a 100% );
+  
+}
+.container-footer{
+  
+  color: #ffffff;
+  padding: 10px;
+}
+
+.row{
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.footer-col{
+  width: 25%;
+  padding: 15px 15px;
+  
+}
+
+.footer-col h3{
+  margin-bottom: 10px;
+}
