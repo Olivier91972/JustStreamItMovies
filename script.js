@@ -45,14 +45,14 @@ fetch(url + urtAllTopRated)
             .then(response => response.json())
             .then(data => {
                 bestMovieDesc[0].textContent = data.description
-                bestMovieInfo[0].setAttribute("target", data.url)
+                bestMovieInfo[0].setAttribute("datamov", data.url)
             })
         
         // films les mieux notés
         for (let i=0; i<4; i++) {
             highestScoresMoviesImage[i].src = data.results[i+1].image_url
             highestScoresMoviesImage[i].setAttribute("alt", "Affiche du film " + data.results[i+1].title)
-            highestScoresMoviesImage[i].setAttribute("target", data.results[i+1].url)
+            highestScoresMoviesImage[i].setAttribute("datamov", data.results[i+1].url)
         }
     });
 
@@ -64,7 +64,7 @@ fetch(url + urtAllTopRated + "&page=2")
         for (let i=4; i<7; i++) {
             highestScoresMoviesImage[i].setAttribute("src", data.results[i-4].image_url)
             highestScoresMoviesImage[i].setAttribute("alt", "Affiche du film " + data.results[i-4].title)
-            highestScoresMoviesImage[i].setAttribute("target", data.results[i-4].url)
+            highestScoresMoviesImage[i].setAttribute("datamov", data.results[i-4].url)
         }
     });
 
@@ -76,7 +76,7 @@ fetch(url + urtFamilyTopRated)
         for (let i=0; i<5; i++) {
             familyMoviesImage[i].setAttribute("src", data.results[i].image_url)
             familyMoviesImage[i].setAttribute("alt", "Affiche du film " + data.results[i].title)
-            familyMoviesImage[i].setAttribute("target", data.results[i].url)
+            familyMoviesImage[i].setAttribute("datamov", data.results[i].url)
         }
     });
 
@@ -88,7 +88,7 @@ fetch(url + urtFamilyTopRated + "&page=2")
         for (let i=5; i<7; i++) {
             familyMoviesImage[i].setAttribute("src", data.results[i-5].image_url)
             familyMoviesImage[i].setAttribute("alt", "Affiche du film " + data.results[i-5].title)
-            familyMoviesImage[i].setAttribute("target", data.results[i-5].url)
+            familyMoviesImage[i].setAttribute("datamov", data.results[i-5].url)
         }
     });
 
@@ -100,7 +100,7 @@ fetch(url + urtMusicRated)
         for (let i=0; i<5; i++) {
             musicMoviesImage[i].setAttribute("src", data.results[i].image_url)
             musicMoviesImage[i].setAttribute("alt", "Affiche du film " + data.results[i].title)
-            musicMoviesImage[i].setAttribute("target", data.results[i].url)
+            musicMoviesImage[i].setAttribute("datamov", data.results[i].url)
         }
     });
 
@@ -112,7 +112,7 @@ fetch(url + urtMusicRated + "&page=2")
         for (let i=5; i<7; i++) {
             musicMoviesImage[i].setAttribute("src", data.results[i-5].image_url)
             musicMoviesImage[i].setAttribute("alt", "Affiche du film " + data.results[i-5].title)
-            musicMoviesImage[i].setAttribute("target", data.results[i-5].url)
+            musicMoviesImage[i].setAttribute("datamov", data.results[i-5].url)
         }
     });
 
@@ -124,7 +124,7 @@ fetch(url + urtAdventureRated)
         for (let i=0; i<5; i++) {
             adventureMoviesImage[i].setAttribute("src", data.results[i].image_url)
             adventureMoviesImage[i].setAttribute("alt", "Affiche du film " + data.results[i].title)
-            adventureMoviesImage[i].setAttribute("target", data.results[i].url)
+            adventureMoviesImage[i].setAttribute("datamov", data.results[i].url)
         }
     });
 
@@ -136,7 +136,7 @@ fetch(url + urtAdventureRated + "&page=2")
         for (let i=5; i<7; i++) {
             adventureMoviesImage[i].setAttribute("src", data.results[i-5].image_url)
             adventureMoviesImage[i].setAttribute("alt", "Affiche du film " + data.results[i-5].title)
-            adventureMoviesImage[i].setAttribute("target", data.results[i-5].url)
+            adventureMoviesImage[i].setAttribute("datamov", data.results[i-5].url)
         }
     });
 
@@ -147,12 +147,12 @@ var btn = document.getElementsByClassName("bestMovieInfo")[0];
 
 document.querySelectorAll(".category__item").forEach(item => {
     item.addEventListener('click', event => {
-        modalInfos(item.getAttribute("target"))
+        modalInfos(item.getAttribute("datamov"))
     })
 });
 
 btn.onclick = function() {
-    modalInfos(btn.getAttribute("target"))
+    modalInfos(btn.getAttribute("datamov"))
 };
 
 span.onclick = function() {
@@ -160,12 +160,12 @@ span.onclick = function() {
 };
 
 window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.datamov == modal) {
       modal.style.display = "none";
     }
 };
 
-function modalInfos(target) {
+function modalInfos(datamov) {
     const image = document.getElementById("modal-image");
     const title = document.getElementById("modal-title");
     const category = document.getElementById("modal-category");
@@ -178,7 +178,7 @@ function modalInfos(target) {
     const country = document.getElementById("modal-country");
     const boxoffice = document.getElementById("modal-boxoffice");
     const summary = document.getElementById("modal-summary");
-    fetch(target)
+    fetch(datamov)
         .then(response => response.json())
         .then(data => {
             modal.style.display = "block";
