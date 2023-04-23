@@ -18,7 +18,7 @@ du GitHub.
 
 Une fois l'API installée :
 - Clonez ce repository avec la commande suivant : 
-    git clone https://github.com/Olivier91972/JustStreamItMovies.git
+    - git clone https://github.com/Olivier91972/JustStreamItMovies.git
 - Lancez le server de l'API
 - Lancez le fichier  JustStreamIt.html
 
